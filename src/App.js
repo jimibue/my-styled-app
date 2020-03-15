@@ -1,16 +1,31 @@
-import React from 'react';
-import { Header, Button, Segment, Card, Icon } from 'semantic-ui-react';
+import React from "react";
+import { Header, Button, Segment, Card, Icon } from "semantic-ui-react";
+import styled from "styled-components";
+import HeaderText from "./HeaderText";
 
 const App = () => (
-  <div>
-    <Header as="h1" textAlign="center">My Portfolio</Header>
-    <Segment>
-      <Header as="h2" textAlign="center">My Projects</Header>
+  <AppContainer>
+    <HeaderText fSize="large">
+      My Portfolio
+    </HeaderText>
+    <Segment as={Transparent}>
+      <HeaderText>
+        My Projects
+      </HeaderText>
     </Segment>
-    <Segment>
-      <Header as="h2" textAlign="center">Contact</Header>
+    <Segment as={Transparent}>
+      <HeaderText>
+        Contact
+      </HeaderText>
     </Segment>
-  </div>
-)
+  </AppContainer>
+);
+
+const Transparent = styled.div`
+  background: transparent !important;
+`;
+const AppContainer = styled.div`
+  background: linear-gradient(to bottom right, aliceblue, black);
+`;
 
 export default App;
