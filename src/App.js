@@ -41,6 +41,16 @@ class App extends React.Component {
                         </Star>
                       )}
                     </Card.Content>
+                    <Card.Content extra>
+                      <StyledButton
+                        as={ButtonLink}
+                        href={r.html_url}
+                        target="_blank"
+                        // rel="noopener norefferer"
+                      >
+                        View
+                      </StyledButton>
+                    </Card.Content>
                   </StyledCard>
                 </Grid.Column>
               ))}
@@ -54,6 +64,29 @@ class App extends React.Component {
     );
   }
 }
+const ButtonLink = styled.a`
+  float: right;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: ${props => props.theme.fg} !important;
+  background-color: ${props => props.theme.bg};
+  // color: ${props => props.theme.bg} !important;
+  // background-color: ${props => props.theme.fg};
+`;
+const StyledButton = styled.div`
+  display: flex;
+  background: #312d2d;
+  color: white;
+  padding: 15px 25px;
+  justify-content: center;
+  transition: background 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: #606060;
+    transition: background 0.2s ease;
+  }
+`;
 const rotate360 = keyframes`
   from {
     transform: rotate(0deg);
